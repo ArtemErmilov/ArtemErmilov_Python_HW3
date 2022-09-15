@@ -10,13 +10,18 @@ from os import system
 
 system ('cls')
 
+import Base
+
+number= Base.check_number_more(0,'Введите число: ', 'Вы ввели не правильное число, введите его заново: ')
+
+number = int(number)
+
 def binary_numbers (number, out:str='0'):
-    out = out+str(number%2) 
+    out = str(number%2)+out
     if number == 1:
-        return out[:0:-1]
+        return out[:-1]
     else:
         return binary_numbers (number//2,out)
     
     
-a=binary_numbers(46)
-print (a)
+print (f'{number} -> {binary_numbers(number)}')
